@@ -23,6 +23,10 @@ export class HomeComponent  implements OnInit{
   this.registerMode = !this.registerMode
  }
 
+ cancelRegisterMode(event:boolean){
+  this.registerMode = event;
+ }
+
  getUsers(){
   this.http.get('http://localhost:5018/api/users').subscribe({
   next: response => this.users = response,
